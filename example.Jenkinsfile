@@ -1,7 +1,6 @@
 def myStage(name) {
     stage(name) {
         echo "$name"
-        sh "python3 test.py"
     }
 }
 
@@ -12,7 +11,10 @@ parallel p1: {
     parallel 'p1-1-1': {
         myStage('p1-1-1')
     },'p1-1-2': {
-        myStage('p1-1-2')
+        stage("p1-1-2") {
+           echo "Sh"
+           sh "hostname"
+        }
     }
     myStage('p1-2')
 }, p2: {
