@@ -1,10 +1,9 @@
-agent any
 def myStage(name) {
     stage(name) {
         echo "$name"
     }
 }
-
+node {
 myStage('pre-parallel')
 
 parallel p1: {
@@ -20,6 +19,7 @@ parallel p1: {
     myStage('p1-2')
 }, p2: {
     myStage('p2')
+}
 }
 
 myStage('post-parallel')
