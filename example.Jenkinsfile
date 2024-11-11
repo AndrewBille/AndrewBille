@@ -1,3 +1,4 @@
+agent any
 def myStage(name) {
     stage(name) {
         echo "$name"
