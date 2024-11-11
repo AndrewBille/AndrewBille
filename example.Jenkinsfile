@@ -1,6 +1,7 @@
 def myStage(name) {
     stage(name) {
         echo "$name"
+        sh "python3 test.py"
     }
 }
 
