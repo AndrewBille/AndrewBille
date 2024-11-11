@@ -5,7 +5,7 @@ pipeline {
         stage("clean install") {
             steps {
                 echo "I'm clean install"
-                sh "hostname"
+                sh "python3 test.py"
             }
         }
 
