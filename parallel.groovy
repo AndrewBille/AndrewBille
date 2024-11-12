@@ -11,5 +11,6 @@ for (int i = 0; i < arr.size(); i++) {
         echo "${it}"
     }
 }
-
-parallel stepsForParallel
+node('local') {
+    parallel stepsForParallel
+}
