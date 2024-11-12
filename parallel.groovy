@@ -10,7 +10,7 @@ node('local') {
         def stepName = "running ${it}"
         stepsForParallel[stepName] = { ->
             echo "${it}"
-            sh "python3 test.py"
+            sh "python3 -c 'import random; exit((int)(random.random()>0.5))'"
         }
     }
     parallel stepsForParallel
